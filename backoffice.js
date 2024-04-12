@@ -91,24 +91,19 @@ const handleGetFetch = async () => {
   }
 }
 
-const handleDelete = () => {
-  const hasConfirmed = confirm('Do you want to delete the product?')
-
-  if (hasConfirmed) {
-    fetch(URL, { method: 'DELETE' })
-      .then((resp) => resp.json())
-      .then((resp) => {
-        if (resp.ok) {
-          return resp.json()
-        } else {
-          throw new Error('Error in fetch')
-        }
-      })
-
-      .then((deletedObj) => {
-        alert('Resource: ' + deletedObj.name + ' Successfully deleted!')
-        window.location.assign('./homepage.html')
-      })
-      .catch((err) => console.log(err))
+const handleDelete = async () => {
+  try {
+    const resp = await fetch(URL, {
+      method: 'DELETE',
+      headers: {
+        Authorization:
+          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NjE4ZGQzYzdmMzA0NjAwMWFlNTlmNTQiLCJpYXQiOjE3MTI5MTE2NzUsImV4cCI6MTcxNDEyMTI3NX0.C8bU5RgOGzPu58Nd1aALChYC4dv0S1O6fCcsDcL7U08',
+      },
+    })
+    const product = await resp.json()
+    alert('Resource: ' + product.name + ' Successfully deleted!')
+    window.location.assign('./homepage.html')
+  } catch (error) {
+    console.log(error)
   }
 }
