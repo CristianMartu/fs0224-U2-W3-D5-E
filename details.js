@@ -40,6 +40,12 @@ const createPage = (product) => {
                         <p class="card-text"><strong>Brand:</strong> ${product.brand}</p>
                         <p class="card-text"><strong>Description:</strong> ${product.description}</p>
                         <p class="card-text"><strong>Price:</strong> ${product.price}€</p>
+                        <h6 class="bg-light ps-2 py-2">Server Details</h6>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item px-2"><strong>id:</strong> ${product.userId}</li>
+                            <li class="list-group-item px-2"><strong>createdAt:</strong> ${product.createdAt}</li>
+                            <li class="list-group-item px-2"><strong>updatedAt:</strong> ${product.updatedAt}</li>
+                        </ul>
                     </div>
                 </div>
                 </div>
