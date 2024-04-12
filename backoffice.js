@@ -9,12 +9,9 @@ const form = document.querySelector('form')
 
 window.onload = () => {
   if (id) {
-    console.log('Edit product')
     changeDom()
     handleGetFetch()
   } else {
-    console.log('New product')
-
     form.addEventListener('submit', handleSubmit)
   }
   const btnReset = document.querySelector('.reset')

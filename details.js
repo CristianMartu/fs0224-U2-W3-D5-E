@@ -23,10 +23,6 @@ const handleGetFetch = async () => {
 
 const createPage = (product) => {
   const div = document.getElementById('imageContainer')
-  //   div.innerHTML = `
-  //           <img src=${product.imageUrl}
-  //           alt="agenda" class="container object-fit-cover" style="height:30vh">`
-
   div.innerHTML = `
                 <div class="card mb-4 shadow-sm">
                     <img
