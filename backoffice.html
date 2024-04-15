@@ -11,7 +11,20 @@
       crossorigin="anonymous"
     />
   </head>
+  <style>
+    @keyframes fade {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
 
+    .alert {
+      animation: fade 1s 2s ease-in-out forwards;
+    }
+  </style>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container">
@@ -135,6 +148,14 @@
               </div>
             </div>
           </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-7">
+        <div class="alert alert-primary container mt-3 d-none" role="alert">
+          Fetch success
         </div>
       </div>
     </div>

@@ -2,6 +2,16 @@ const URL = 'https://striveschool-api.herokuapp.com/api/product/'
 
 window.onload = () => {
   handleFetch()
+  isLoading(true)
+}
+
+const isLoading = (bool) => {
+  const loader = document.querySelector('.spinner-border')
+  if (bool) {
+    loader.classList.remove('d-none')
+  } else {
+    loader.classList.add('d-none')
+  }
 }
 
 const handleFetch = async () => {
@@ -16,6 +26,8 @@ const handleFetch = async () => {
     createListProduct(products)
   } catch (error) {
     console.log(error)
+  } finally {
+    isLoading(false)
   }
 }
 
